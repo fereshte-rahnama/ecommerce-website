@@ -1,3 +1,4 @@
+/* start normalization */
 *{
     margin: 0;
     padding: 0;
@@ -22,6 +23,9 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
+/* end normalization */
+
+/*start header  */
 header{
     height: 40px;
     background-color: var(--dark-green);
@@ -33,6 +37,9 @@ header p{
     font-size: 20px;
     font-family: 'Playfair Display', serif;
 }
+/* end header */
+
+/* start navbar */
 nav{
     max-width: 100%;
     height: 80px;
@@ -96,3 +103,109 @@ nav ul li a:hover{
     flex-shrink: 0;
     color: var(--text-light);
 }
+/* end navbar */
+
+/* start banner section */
+.banner{
+    height: 500px;
+    display: flex;
+    padding: 40px 8%;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+.banner-options{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.banner-options p{
+    color: var(--primary);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.banner-options h1{
+    font-size: 48px;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+.banner-options span{
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 30px;
+    color: var(--text);
+}
+.banner-button{
+display: flex;
+gap: 12px;
+}
+.banner-button button{
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    transition: var(--transitionEl);
+}
+.banner-button button:first-child{
+    background-color: var(--primary);
+    color: var(--white);
+    border:1px solid var(--primary);
+    border-radius: 3px;
+}
+.banner-button button:last-child{
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 3px;
+}
+.banner-button button:first-child:hover{
+    background-color: var(--dark-green);
+}
+.banner-button button:last-child:hover{
+    background-color: var(--primary);
+    color: var(--white);
+}
+.banner-pic{
+    position: relative;
+}
+.banner-pic >img{
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+}
+.banner-off{
+    position: absolute;
+    bottom: -20%;
+    right: 10%;
+    width: 200px;
+    height: 80px;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    box-shadow:0 5px 15px rgba(0, 0, 0, .2);
+}
+.banner-off img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.banner-off div{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.banner-off p{
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text);
+}
+.banner-off span{
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-light);
+}
+/* end banner section */
