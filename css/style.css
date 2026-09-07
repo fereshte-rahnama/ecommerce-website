@@ -16,3 +16,13 @@
     --star: #F2B800;
     --light-green: #E8F2EE;
 }
+header{
+    height: 40px;
+    background-color: var(--dark-green);
+}
+header p{
+    color: var(--white);
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+}
