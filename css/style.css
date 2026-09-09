@@ -280,5 +280,108 @@ nav ul li a:hover{
 visibility: visible !important;
 opacity: 1 !important;
 }
-
 /* end banner section */
+
+/* start policy section */
+.policy{
+    height: 150px;
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 5%;
+    line-height: 30px;
+    padding: 0 30px;
+}
+.policy-options{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.policy-options i{
+font-size: 32px;
+}
+.policy-options h4{
+    margin: 0;
+    color: var(--text);
+}
+.policy-options p{
+    margin: 0;
+    color: var(--text-light);
+}
+.policy-hr{
+    margin: 0 5%;
+    /* opacity: .7; */
+    border: none;
+    border-top: 1px solid #ddd;
+}
+/* end policy section */
+
+/* start shop-category section  */
+.shop-category{
+    height: 400px;
+    margin: 0 5%;
+    position: relative;
+}
+.shop-category >p{
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text);
+    transition: var(--transitionEl);
+}
+.shop-category >i{
+    position: absolute;
+    right: 3%;
+    top: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text);
+    transition: var(--transitionEl);
+}
+.shop-category>p:hover,
+.shop-category>i:hover{
+    color: var(--primary);
+}
+.shop-category h2{
+    margin: 30px 0;
+    font-size: 32px;
+}
+.shop-category-features{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    
+}
+.shop-category-cards{
+    background-color: var(--card-bg);
+    width: 190px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transitionEl);
+}
+.shop-category-cards:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.shop-category-cards img{
+    width: 100%;
+    height: 150px;
+    display: block;
+    object-fit: contain;
+    object-position: center top;
+}
+.shop-category-cards h4{
+    margin: 30px 10px 0;
+    text-align: center;
+    color: var(--text);
+}
+.shop-category-cards p{
+    margin: 8px 10px 0;
+    text-align: center;
+    color: var(--text-light);
+}
+/* end shop-category section */
