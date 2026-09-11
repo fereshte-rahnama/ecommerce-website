@@ -362,6 +362,7 @@ font-size: 32px;
     border-radius: 10px;
     overflow: hidden;
     transition: var(--transitionEl);
+    cursor: pointer;
 }
 .shop-category-cards:hover{
     transform: translateY(-8px);
@@ -427,6 +428,7 @@ font-size: 32px;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 .featured-products-cards img{
     width: 97%;
