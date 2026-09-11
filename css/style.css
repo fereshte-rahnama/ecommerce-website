@@ -392,6 +392,10 @@ font-size: 32px;
     margin: 0 5%;
     position: relative;
 }
+.featured-products h2{
+    font-size: 32px;
+    color: var(--text);
+}
 .featured-products >p{
     position: absolute;
     right: 5%;
@@ -460,7 +464,7 @@ font-size: 32px;
 }
 .featured-products-cards span{
     display: flex;
-    color:rgb(255, 196, 0);
+    color:var(--star);
     margin-left: 20px;
     margin-bottom: 5px;
 }
@@ -562,3 +566,48 @@ font-size: 32px;
    color:#14c08f;
 }
 /* end final section */
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+   
+
+
+  
+   
+
+
+   
+
+   
+
+
+
+
