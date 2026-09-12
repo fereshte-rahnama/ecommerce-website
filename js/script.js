@@ -30,4 +30,13 @@ setInterval(nextSlide, 5000);
 // end slider
 
 
+// start hamburger menu
+const hamburger=document.querySelector('.menu-toggle')
+const navEl=document.querySelector('nav ul')
+
+hamburger.addEventListener('click',()=>{
+    navEl.classList.toggle('active')
+})
+// end hamburger menu
+
 
