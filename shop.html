@@ -1,56 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/shop.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shop.css" />
     <title>🛍️ Velora</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- start header section -->
     <header>
-        <p>Free shipping on orders over 50$</p>
+      <p>Free shipping on orders over 50$</p>
     </header>
     <!-- end header section -->
 
     <!-- start navbar section -->
     <nav>
-        <img src="./assets/images/logo.png" alt="logo.png">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li class="shop"><a href="#">Shop</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Details</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="icons">
-            <div class="search-icon">
-                <input type="text" placeholder="Search for products...">
-                <i class='bx bx-search'></i>
-            </div>
-    <i class='bx bx-user'></i>
-    <i class='bx bx-heart'></i>
-    <i class='bx bx-shopping-bag'></i>
-</div>
-    <button class="menu-toggle" aria-label="Open menu">
-        <i class='bx bx-menu'></i>
-    </button>
+      <img src="./assets/images/logo.png" alt="logo.png" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="shop"><a href="#">Shop</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Details</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="icons">
+        <div class="search-icon">
+          <input type="text" placeholder="Search for products..." />
+          <i class="bx bx-search"></i>
+        </div>
+        <i class="bx bx-user"></i>
+        <i class="bx bx-heart"></i>
+        <i class="bx bx-shopping-bag"></i>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu">
+        <i class="bx bx-menu"></i>
+      </button>
     </nav>
     <!-- end navbar section -->
 
     <!-- start banner section -->
     <section class="shop-banner">
-        <img src="./assets/images/banner-shop.png" alt="">
-        <h1>SHOP</h1>
-        <p>Discover the latest trendes and timeless classics.</p>
+      <img src="./assets/images/banner-shop.png" alt="" />
+      <h1>SHOP</h1>
+      <p>Discover the latest trendes and timeless classics.</p>
     </section>
-     <!-- end banner section -->
+    <!-- end banner section -->
 
+    <!-- start back to home section -->
+    <section class="back-to-home">
+      <p><a href="index.html">Home</a> > Shop</p>
+    </section>
+    <!-- end back to home section -->
 
-
-
-
-</body>
+    <!-- start shop content section -->
+    <section class="shop-content">
+      <aside class="shop-sidebar">
+        <h3>Categories</h3>
+        <div class="category-filter">
+          <a>All Products
+            <i class='bx bx-chevron-down'></i>
+          </a>
+          <label>
+            <input type="checkbox" />
+            Women
+          </label>
+          <label>
+            <input type="checkbox" />
+            Men
+          </label>
+          <label>
+            <input type="checkbox" />
+            Shoes
+          </label>
+          <label>
+            <input type="checkbox" />
+            Bags
+          </label>
+          <label>
+            <input type="checkbox" />
+            Accessories
+          </label>
+          <label>
+            <input type="checkbox" />
+            Beauty
+          </label>
+        </div>
+        <div class="price-filter">
+          <h3>Price Range</h3>
+          <input type="range" min="0" max="200" value="200" />
+          <div class="price-values">
+          <span>$0</span>
+          <span>$200</span>
+          </div>
+        </div>
+        <div class="color-filter">
+          <h3>Color</h3>
+          <div class="colors">
+            <label>
+              <input type="radio" name="color" value="black" />
+              <span class="color-black"></span>
+            </label>
+            <label>
+              <input type="radio" name="color" value="green" />
+              <span class="color-green"></span>
+            </label>
+            <label>
+              <input type="radio" name="color" value="blue" />
+              <span class="color-blue"></span>
+            </label>
+            <label>
+              <input type="radio" name="color" value="pink" />
+              <span class="color-pink"></span>
+            </label>
+            <label>
+              <input type="radio" name="color" value="yellow" />
+              <span class="color-yellow"></span>
+            </label>
+          </div>
+        </div>
+        <div class="size-filter">
+          <h3>Size</h3>
+          <div class="sizes">
+            <div>XS</div>
+            <div>S</div>
+            <div>M</div>
+            <div>L</div>
+            <div>XL</div>
+            <div>XXL</div>
+          </div>
+        </div>
+        <div class="sort-filter">
+          <h3>Sort By</h3>
+          <select id="sidebar-sort">
+            <option value="features">Features</option>
+            <option value="newest">Newest</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="best-selling">Best Selling</option>
+          </select>
+        </div>
+      </aside>
+      <div class="products">
+        <div class="product-header">
+          <p>Showing 1-12 of 120 results</p>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="./assets/images/floral_summer_dress.jpg" alt="" />
+            </div>
+            <div class="product-info">
+              <p class="product-category">Women</p>
+              <h3>Flora Summer Dress</h3>
+              <div class="rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <div class="product-bottom">
+                <p class="product-price">$49.99</p>
+                <button class="cart-btn">
+                  <i class="bx bx-shopping-bag"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end shop content section -->
+  </body>
 </html>
