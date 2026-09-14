@@ -1,0 +1,129 @@
+[
+    {
+        "id":1,
+        "title":"floral summer dress",
+        "category":"Women",
+        "price":49.99,
+        "rating":4.3,
+        "color":"yellow",
+        "sizes":[
+            "L",
+            "XL"
+        ],
+        "image":"./assets/images/floral_summer_dress.jpg"
+    },
+        {
+        "id": 2,
+        "title": "Classic Leather Handbag",
+        "category": "Bags",
+        "price": 89.99,
+        "rating": 4.9,
+        "color": "brown",
+        "sizes": [
+            "One Size"
+        ],
+        "image": "./assets/images/leather_handbag.jpg"
+    },
+        {
+        "id": 3,
+        "title": "Casual Cotton T-Shirt",
+        "category": "Men",
+        "price": 29.99,
+        "rating": 4.6,
+        "color": "blue",
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "image": "./assets/images/casual_tshirt.jpg"
+    },
+    
+    {
+        "id": 4,
+        "title": "Classic Denim Jacket",
+        "category": "Men",
+        "price": 79.99,
+        "rating": 4.7,
+        "color": "blue",
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "image": "./assets/images/denim_jacket.jpg"
+    },
+        {
+        "id": 5,
+        "title": "Everyday Running Shoes",
+        "category": "Shoes",
+        "price": 69.99,
+        "rating": 4.7,
+        "color": "white",
+        "sizes": [
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41"
+        ],
+        "image": "./assets/images/running_shoes.jpg"
+    },
+        {
+        "id": 6,
+        "title": "Minimalist Everyday Sneakers",
+        "category": "Shoes",
+        "price": 74.99,
+        "rating": 4.8,
+        "color": "white",
+        "sizes": [
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41"
+        ],
+        "image": "./assets/images/classic_white_sneakers.jpg"
+    },
+        {
+        "id": 7,
+        "title": "Classic Black Sunglasses",
+        "category": "Accessories",
+        "price": 39.99,
+        "rating": 4.6,
+        "color": "black",
+        "sizes": [
+            "One Size"
+        ],
+        "image": "./assets/images/sunglasses.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Urban Backpack",
+        "category": "Bags",
+        "price": 59.99,
+        "rating": 4.8,
+        "color": "green",
+        "sizes": [
+            "One Size"
+        ],
+        "image": "./assets/images/backpack.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Minimalist Classic Watch",
+        "category": "Accessories",
+        "price": 69.99,
+        "rating": 4.8,
+        "color": "black",
+        "sizes": [
+            "One Size"
+        ],
+        "image": "./assets/images/watch-pic.jpg"
+    }
+]

@@ -1,60 +1,127 @@
-'use strict'
-const products=document.querySelector('.product-grid')
+'use strict';
 
-const productImages=[
-    './assets/images/floral_summer_dress.jpg',
-    './assets/images/classic_white_sneakers.jpg',
-    './assets/images/leather_handbag.jpg',
-    './assets/images/denim_jacket.jpg',
-    './assets/images/watch-pic.jpg',
-    './assets/images/sunglasses.jpg',
-    './assets/images/casual_tshirt.jpg',
-    './assets/images/running_shoes.jpg',
-    './assets/images/backpack.jpg',
+const productsGrid = document.querySelector('.product-grid');
+const productCount = document.querySelector('#product-count');
 
-];
+let allProducts = [];
 
-
-
-fetch('https://dummyjson.com/products')
+fetch('./data/products.json')
     .then(res => res.json())
     .then(data => {
+        allProducts = data;
+        renderProducts(allProducts);
+    })
+    .catch(error => console.log(error));
 
-        data.products.map((e, index) => {
-            console.log(e.thumbnail);
-             products.innerHTML += `
-        <div class="product-card">
 
-            <div class="product-image">
-                <img src="${productImages[index % productImages.length]}" alt="${e.title}">
+function renderProducts(products) {
 
-                <button class="wishlist-btn">
-                    <i class='bx bx-heart'></i>
-                </button>
-            </div>
+    productsGrid.innerHTML = '';
 
-            <div class="product-info">
+    productCount.textContent =
+        `Showing 1-${products.length} of ${allProducts.length} results`;
 
-                <p class="product-category">${e.category}</p>
+    products.forEach((e) => {
 
-                <h3>${e.title}</h3>
+        productsGrid.innerHTML += `
+            <div class="product-card">
 
-                <div class="product-rating">
-                    <i class='bx bxs-star'></i>
-                    <span>${e.rating}</span>
+                <div class="product-image">
+                    <img src="${e.image}" alt="${e.title}">
                 </div>
 
-                <div class="product-bottom">
-                    <p class="product-price">$${e.price}</p>
+                <div class="product-info">
 
-                    <button class="cart-btn">
-                        <i class='bx bx-shopping-bag'></i>
-                    </button>
+                    <p class="product-category">${e.category}</p>
+
+                    <h3>${e.title}</h3>
+
+                    <div class="product-rating">
+                        <i class='bx bxs-star'></i>
+                        <span>${e.rating}</span>
+                    </div>
+
+                    <div class="product-bottom">
+                        <p class="product-price">$${e.price}</p>
+
+                        <button class="cart-btn">
+                            <i class='bx bx-shopping-bag'></i>
+                        </button>
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>`
-        });
-
+        `;
     });
+}
+
+// category filter
+
+const categoryInputs=document.querySelectorAll(".category-filter input");
+
+categoryInputs.forEach((input) => {
+
+    input.addEventListener('change', () => {
+
+        const selectedCategories = [...categoryInputs]
+            .filter((input) => input.checked)
+            .map((input) => input.value);
+
+        const filteredProducts = selectedCategories.length === 0
+            ? allProducts
+            : allProducts.filter((product) => {
+                return selectedCategories.includes(product.category);
+            });
+
+        renderProducts(filteredProducts);
+    });
+
+});
+
+const allProductsLink=document.querySelector('.category-filter a');
+
+allProductsLink.addEventListener('click',(e)=>{
+    e.preventDefault();
+    categoryInputs.forEach((input)=>{
+            input.addEventListener('change', () => {
+        filterProducts();
+    });
+    });
+    renderProducts(allProducts)
+});
+
+// price
+
+const priceRange=document.querySelector('#price-range')
+const priceValue=document.querySelector('#price-value')
+
+priceRange.addEventListener('input', () => {
+
+    priceValue.textContent = `$${priceRange.value}`;
+
+    filterProducts();
+
+});
+function filterProducts() {
+
+    const selectedCategories = [...categoryInputs]
+        .filter((input) => input.checked)
+        .map((input) => input.value);
+
+    const maxPrice = Number(priceRange.value);
+
+    const filteredProducts = allProducts.filter((product) => {
+
+        const categoryMatch =
+            selectedCategories.length === 0 ||
+            selectedCategories.includes(product.category);
+
+        const priceMatch =
+            product.price <= maxPrice;
+
+        return categoryMatch && priceMatch;
+    });
+
+    renderProducts(filteredProducts);
+}

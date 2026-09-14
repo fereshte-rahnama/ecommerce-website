@@ -303,10 +303,20 @@ nav ul li a:hover{
     color: var(--text);
     font-size: 16px;
 }
+.category-filter{
+    cursor: pointer;
+}
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+    margin-left: 20px;
+}
+#product-count{
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 18px;
 }
 .product-image {
        width: 100%;

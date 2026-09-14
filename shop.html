@@ -66,36 +66,36 @@
             <i class='bx bx-chevron-down'></i>
           </a>
           <label>
-            <input type="checkbox" />
+            <input type="checkbox" value="Women" />
             Women
           </label>
           <label>
-            <input type="checkbox" />
+            <input type="checkbox" value="Men"/>
             Men
           </label>
           <label>
-            <input type="checkbox" />
+            <input type="checkbox" value="Shoes" />
             Shoes
           </label>
           <label>
-            <input type="checkbox" />
+            <input type="checkbox" value="Bags"/>
             Bags
           </label>
           <label>
-            <input type="checkbox" />
+            <input type="checkbox" value="Accessories" />
             Accessories
           </label>
           <label>
-            <input type="checkbox" />
+            <input type="checkbox" value="Beauty"/>
             Beauty
           </label>
         </div>
         <div class="price-filter">
           <h3>Price Range</h3>
-          <input type="range" min="0" max="200" value="200" />
+          <input type="range" min="0" max="200" value="200" id="price-range"/>
           <div class="price-values">
           <span>$0</span>
-          <span>$200</span>
+          <span id="price-value">$200</span>
           </div>
         </div>
         <div class="color-filter">
@@ -147,7 +147,7 @@
       </aside>
       <div class="products">
         <div class="product-header">
-          <p>Showing 1-12 of 120 results</p>
+          <p id="product-count"></p>
         </div>
         <div class="product-grid"></div>
     </section>
