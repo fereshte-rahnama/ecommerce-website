@@ -10,7 +10,10 @@
             "L",
             "XL"
         ],
-        "image":"./assets/images/floral_summer_dress.jpg"
+        "image":"./assets/images/floral_summer_dress.jpg",
+        "featured": true,
+        "createdAt": "2026-09-10",
+        "sales": 120
     },
         {
         "id": 2,
@@ -22,7 +25,10 @@
         "sizes": [
             "One Size"
         ],
-        "image": "./assets/images/leather_handbag.jpg"
+        "image": "./assets/images/leather_handbag.jpg",
+        "featured": true,
+        "createdAt": "2025-09-10",
+        "sales": 130
     },
         {
         "id": 3,
@@ -38,7 +44,10 @@
             "XL",
             "XXL"
         ],
-        "image": "./assets/images/casual_tshirt.jpg"
+        "image": "./assets/images/casual_tshirt.jpg",
+        "featured": false,
+        "createdAt": "2026-05-10",
+        "sales": 150
     },
     
     {
@@ -54,7 +63,10 @@
             "L",
             "XL"
         ],
-        "image": "./assets/images/denim_jacket.jpg"
+        "image": "./assets/images/denim_jacket.jpg",
+        "featured": true,
+        "createdAt": "2026-03-12",
+        "sales": 148
     },
         {
         "id": 5,
@@ -71,7 +83,10 @@
             "40",
             "41"
         ],
-        "image": "./assets/images/running_shoes.jpg"
+        "image": "./assets/images/running_shoes.jpg",
+        "featured": false,
+        "createdAt": "2025-08-10",
+        "sales": 125
     },
         {
         "id": 6,
@@ -88,7 +103,11 @@
             "40",
             "41"
         ],
-        "image": "./assets/images/classic_white_sneakers.jpg"
+        "image": "./assets/images/classic_white_sneakers.jpg",
+        "featured": false,
+        "createdAt": "2026-09-19",
+        "sales": 140
+
     },
         {
         "id": 7,
@@ -100,7 +119,10 @@
         "sizes": [
             "One Size"
         ],
-        "image": "./assets/images/sunglasses.jpg"
+        "image": "./assets/images/sunglasses.jpg",
+        "featured": false,
+        "createdAt": "2024-09-10",
+        "sales": 132
     },
     {
         "id": 8,
@@ -112,7 +134,10 @@
         "sizes": [
             "One Size"
         ],
-        "image": "./assets/images/backpack.jpg"
+        "image": "./assets/images/backpack.jpg",
+        "featured": true,
+        "createdAt": "2026-09-11",
+        "sales": 135
     },
     {
         "id": 9,
@@ -124,6 +149,9 @@
         "sizes": [
             "One Size"
         ],
-        "image": "./assets/images/watch-pic.jpg"
+        "image": "./assets/images/watch-pic.jpg",
+        "featured": false,
+        "createdAt": "2026-07-16",
+        "sales": 112
     }
 ]
