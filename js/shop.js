@@ -222,17 +222,27 @@ categoryInputs.forEach((input) => {
 // =========================
 // All Products
 // =========================
-
 allProductsLink.addEventListener('click', (e) => {
-
     e.preventDefault();
 
     categoryInputs.forEach((input) => {
         input.checked = false;
     });
 
-    filterProducts();
+    colorInputs.forEach((input) => {
+        input.checked = false;
+    });
 
+    sizeButtons.forEach((button) => {
+        button.classList.remove('active');
+    });
+
+    priceRange.value = priceRange.max;
+    priceValue.textContent = `$${priceRange.max}`;
+
+    sortSelect.value = 'featured';
+
+    filterProducts();
 });
 
 
