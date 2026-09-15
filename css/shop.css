@@ -415,3 +415,35 @@ nav ul li a:hover{
     background-color: var(--dark-green);
 }
 /* end shop content section */
+
+/* start final section */
+.final-section{
+    min-height: 55px;
+    background-color: var(--dark-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3%;
+    margin-top: 20px;
+}
+.final-section p{
+    color: var(--white);
+    font-size: 12px;
+}
+.final-section ul{
+    display: flex;
+    gap:20px;
+    padding: 0;
+    margin: 0;
+}
+.final-section a{
+    color: var(--white);
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: none;
+    transition: var(--transitionEl);
+}
+.final-section a:hover{
+   color:#14c08f;
+}
+/* end final section */
