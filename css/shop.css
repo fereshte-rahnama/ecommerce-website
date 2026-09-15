@@ -250,6 +250,10 @@ nav ul li a:hover{
     padding: 0 5px;
     cursor: pointer;
 }
+.colors label input:checked + span {
+    outline: 1px solid var(--primary);
+    outline-offset: 2px;
+}
 .color-black{
     background-color: black;
 }
@@ -276,16 +280,19 @@ nav ul li a:hover{
     flex-wrap: wrap;
     gap: 10px;
 }
-.sizes div{
+.sizes button{
     width: 50px;
     height: 40px;
-    border-radius: 3px;
+    border: none;
     background-color: var(--background);
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--text-light);
     cursor: pointer;
+}
+.sizes button:hover{
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 .sort-filter h3{
     color: var(--text);
