@@ -2,27 +2,15 @@
 
 const productsGrid = document.querySelector('.product-grid');
 const productCount = document.querySelector('#product-count');
-
-const categoryInputs = document.querySelectorAll(
-    '.category-filter input'
-);
-
-const allProductsLink = document.querySelector(
-    '.category-filter a'
-);
-
+const cartCount = document.querySelector('.cart-count');
+const categoryInputs = document.querySelectorAll('.category-filter input');
+const allProductsLink = document.querySelector('.category-filter a');
 const priceRange = document.querySelector('#price-range');
 const priceValue = document.querySelector('#price-value');
-
-const colorInputs = document.querySelectorAll(
-    '.color-filter input'
-);
-
-const sizeButtons = document.querySelectorAll(
-    '.sizes button'
-);
-
+const colorInputs = document.querySelectorAll('.color-filter input');
+const sizeButtons = document.querySelectorAll('.sizes button');
 const sortSelect = document.querySelector('#sidebar-sort');
+const searchInput=document.querySelector('.search-icon input');
 
 let allProducts = [];
 
@@ -82,7 +70,7 @@ function renderProducts(products) {
                             $${product.price}
                         </p>
 
-                        <button class="cart-btn">
+                        <button class="cart-btn" data-id="${product.id}">
                             <i class='bx bx-shopping-bag'></i>
                         </button>
 
@@ -122,7 +110,8 @@ function filterProducts() {
     const selectedSizes = [...sizeButtons]
         .filter((button) => button.classList.contains('active'))
         .map((button) => button.textContent.trim());
-
+    //search
+    const searchText=searchInput.value.toLowerCase().trim();
 
     // Filter
     const filteredProducts = allProducts.filter((product) => {
@@ -147,12 +136,15 @@ function filterProducts() {
                 product.sizes.includes(size)
             );
 
+        const searchMatch= product.title.toLowerCase().includes(searchText);
+
 
         return (
             categoryMatch &&
             priceMatch &&
             colorMatch &&
-            sizeMatch
+            sizeMatch &&
+            searchMatch
         );
     });
 
@@ -301,3 +293,28 @@ sortSelect.addEventListener('change', () => {
     filterProducts();
 
 });
+
+// cart
+
+let cart=[];
+productsGrid.addEventListener('click',(e)=>{
+    const cartButton=e.target.closest('.cart-btn')
+    if(!cartButton) return;
+
+    const productId=Number(cartButton.dataset.id);
+    const selectedProduct=allProducts.find((product)=>{
+        return product.id === productId;
+    });
+    cart.push(selectedProduct);
+    cartCount.textContent = cart.length;
+    console.log(cart);
+
+
+});
+
+// search
+
+searchInput.addEventListener('input',()=>{
+    filterProducts();
+});
+

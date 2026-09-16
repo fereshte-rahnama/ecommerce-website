@@ -35,7 +35,10 @@
         </div>
         <i class="bx bx-user"></i>
         <i class="bx bx-heart"></i>
-        <i class="bx bx-shopping-bag"></i>
+        <div class="cart-icon">
+          <i class="bx bx-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </div>
       </div>
       <button class="menu-toggle" aria-label="Open menu">
         <i class="bx bx-menu"></i>
@@ -47,7 +50,7 @@
     <section class="shop-banner">
       <img src="./assets/images/banner-shop.png" alt="" />
       <h1>SHOP</h1>
-      <p>Discover the latest trendes and timeless classics.</p>
+      <p>Discover the latest trends and timeless classics.</p>
     </section>
     <!-- end banner section -->
 
@@ -62,15 +65,16 @@
       <aside class="shop-sidebar">
         <h3>Categories</h3>
         <div class="category-filter">
-          <a>All Products
-            <i class='bx bx-chevron-down'></i>
+          <a
+            >All Products
+            <i class="bx bx-chevron-down"></i>
           </a>
           <label>
             <input type="checkbox" value="Women" />
             Women
           </label>
           <label>
-            <input type="checkbox" value="Men"/>
+            <input type="checkbox" value="Men" />
             Men
           </label>
           <label>
@@ -78,7 +82,7 @@
             Shoes
           </label>
           <label>
-            <input type="checkbox" value="Bags"/>
+            <input type="checkbox" value="Bags" />
             Bags
           </label>
           <label>
@@ -86,16 +90,16 @@
             Accessories
           </label>
           <label>
-            <input type="checkbox" value="Beauty"/>
+            <input type="checkbox" value="Beauty" />
             Beauty
           </label>
         </div>
         <div class="price-filter">
           <h3>Price Range</h3>
-          <input type="range" min="0" max="200" value="200" id="price-range"/>
+          <input type="range" min="0" max="200" value="200" id="price-range" />
           <div class="price-values">
-          <span>$0</span>
-          <span id="price-value">$200</span>
+            <span>$0</span>
+            <span id="price-value">$200</span>
           </div>
         </div>
         <div class="color-filter">
@@ -137,7 +141,7 @@
         <div class="sort-filter">
           <h3>Sort By</h3>
           <select id="sidebar-sort">
-            <option value="featured">Features</option>
+            <option value="featured">Featured</option>
             <option value="newest">Newest</option>
             <option value="price-low">Price: Low to High</option>
             <option value="price-high">Price: High to Low</option>
@@ -150,6 +154,7 @@
           <p id="product-count"></p>
         </div>
         <div class="product-grid"></div>
+      </div>
     </section>
     <!-- end shop content section -->
 
@@ -162,10 +167,7 @@
         <li><a href="">Terms</a></li>
       </ul>
     </div>
-<!-- end final section -->
-
-
-
+    <!-- end final section -->
 
     <script src="./js/shop.js"></script>
   </body>
