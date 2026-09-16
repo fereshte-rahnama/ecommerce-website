@@ -838,17 +838,6 @@ font-size: 32px;
   .search-icon i {
     font-size: 17px;
   }
-  .cart-icon i,
-  .icons > i {
-    font-size: 18px;
-  }
-  .cart-count {
-    width: 16px;
-    height: 16px;
-    top: -8px;
-    right: -8px;
-    font-size: 9px;
-  }
   .menu-toggle {
     display: flex;
     justify-content: center;
