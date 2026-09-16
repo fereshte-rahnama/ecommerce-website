@@ -590,6 +590,19 @@ nav ul li a:hover {
   nav ul {
     display: none;
   }
+    nav ul.active {
+    display: flex;
+    position: absolute;
+    top: 108px;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    }
   .icons {
     margin: 0;
     gap: 12px;
@@ -781,6 +794,19 @@ nav ul li a:hover {
   nav img {
     width: 90px;
   }
+    nav ul.active {
+    display: flex;
+    position: absolute;
+    top: 108px;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    }
   .icons {
     gap: 8px;
   }

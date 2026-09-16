@@ -22,6 +22,7 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 /* end normalization */
 
@@ -562,44 +563,35 @@ font-size: 32px;
 /* ***********************769px - 1199px ****************************** */
 @media (min-width: 769px) and (max-width: 1199px) {
 
-    header {
-        height: 38px;
-    }
-    header p {
-        font-size: 17px;
-        padding-top: 9px;
-    }
-    nav {
-        height: 75px;
-        padding: 0 3%;
+ nav {
+        padding: 0 2%;
     }
     nav img {
-        width: 125px;
-        height: 50px;
-        margin: 12px 15px;
+        width: 105px;
+        height: auto;
+        margin: 10px 5px;
     }
     nav ul {
-        gap: 12px;
+        gap: 8px;
     }
     nav ul li a {
-        font-size: 14px;
-    }
-    .icons {
-        gap: 12px;
-        margin: 0 10px;
-        font-size: 17px;
-    }
-    .search-icon {
-        width: 180px;
-        height: 38px;
-        padding: 0 9px;
-    }
-    .search-icon input {
         font-size: 12px;
     }
-    .search-icon i {
-        font-size: 18px;
+    .icons {
+        gap: 8px;
+        margin: 0 5px;
     }
+    .search-icon {
+        width: 150px;
+        height: 38px;
+    }
+    .search-icon input {
+        font-size: 10px;
+    }
+    .search-icon i {
+        font-size: 17px;
+    }
+
     .menu-toggle {
         display: none;
     }
@@ -798,75 +790,76 @@ font-size: 32px;
 @media (max-width: 768px) {
 
     header {
-        height: 35px;
-    }
-    header p {
-        font-size: 14px;
-        padding-top: 8px;
-    }
-    nav {
-        height: 70px;
-        padding: 0 5%;
-        position: relative;
-        align-items: center;
-    }
-    nav img {
-        width: 105px;
-        height: auto;
-        margin: 0;
-    }
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 70px;
-        right: 5%;
-        width:50%;
-        padding: 15px 0;
-        background-color: var(--primary);
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        border-radius: 10px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-        z-index: 10000;
-    }
+    height: 38px;
+  }
+  header p {
+    padding-top: 9px;
+    font-size: 14px;
+  }
+
+  nav {
+    height: 70px;
+    padding: 0 5%;
+    align-items: center;
+  }
+  nav img {
+    width: 105px;
+    height: auto;
+    margin: 10px 0;
+  }
+  nav ul {
+    display: none;
+  }
     nav ul.active {
-        display: flex;
+    display: flex;
+    position: absolute;
+    top: 108px;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
     }
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-    nav ul li a {
-        display: block;
-        padding: 12px;
-        font-size: 14px;
-        color: var(--white);
-    }
-    .home a{
-        color: var(--white);
-    }
-    .icons {
-        margin: 0;
-        gap: 12px;
-        font-size: 19px;
-    }
-    .search-icon {
-        display: none;
-    }
-    .menu-toggle {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 38px;
-        height: 38px;
-        margin-left: 5px;
-        background-color: transparent;
-        border: 1px solid var(--primary);
-        border-radius: 5px;
-        color: var(--primary);
-        cursor: pointer;
-    }
+  .icons {
+    margin: 0;
+    gap: 12px;
+  }
+  .search-icon {
+    width: 160px;
+    height: 38px;
+    padding: 0 8px;
+  }
+  .search-icon input {
+    font-size: 11px;
+  }
+  .search-icon i {
+    font-size: 17px;
+  }
+  .cart-icon i,
+  .icons > i {
+    font-size: 18px;
+  }
+  .cart-count {
+    width: 16px;
+    height: 16px;
+    top: -8px;
+    right: -8px;
+    font-size: 9px;
+  }
+  .menu-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0;
+  }
     .menu-toggle i {
         font-size: 24px;
     }
@@ -1135,6 +1128,9 @@ font-size: 32px;
     nav ul li a {
         padding: 10px;
         font-size: 13px;
+    }
+        nav ul li a:hover{
+        color: var(--light-green);
     }
     .banner {
         width: 94%;
