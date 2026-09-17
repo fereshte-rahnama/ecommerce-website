@@ -360,6 +360,7 @@ nav ul li a:hover {
   position: relative;
   background-color: var(--background);
   overflow: hidden;
+  cursor: pointer;
 }
 
 .product-image img {
