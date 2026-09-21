@@ -172,24 +172,24 @@ nav ul li a:hover {
 }
 /* end banner-shop section */
 
-/* start back to home section */
-.back-to-home {
+/* start direction section */
+.direction {
   margin: 0 5%;
   height: 40px;
   padding-left: 10px;
 }
-.back-to-home p {
+.direction p {
   font-size: 16px;
   color: var(--text);
 }
-.back-to-home a {
+.direction a {
   color: var(--dark-green);
   cursor: pointer;
 }
-.back-to-home a:hover {
+.direction a:hover {
   text-decoration: underline;
 }
-/* end back to home section */
+/* end direction section */
 
 /* start shop content section */
 .shop-content {
@@ -537,7 +537,7 @@ nav ul li a:hover {
     line-height: 1.5;
   }
 
-  .back-to-home {
+  .direction {
     margin: 0 3%;
   }
 
@@ -663,12 +663,12 @@ nav ul li a:hover {
     line-height: 1.5;
   }
 
-  .back-to-home {
+  .direction {
     margin: 0 5%;
     height: 35px;
     padding-left: 0;
   }
-  .back-to-home p {
+  .direction p {
     font-size: 13px;
   }
 
