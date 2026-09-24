@@ -42,7 +42,7 @@ function renderProducts(products) {
     products.forEach((product) => {
 
         productsGrid.innerHTML += `
-            <div class="product-card">
+            <div class="product-card" data-id="${product.id}">
 
                 <div class="product-image">
                     <img 
@@ -296,7 +296,9 @@ sortSelect.addEventListener('change', () => {
 
 // cart
 
-let cart=[];
+let cart=JSON.parse(localStorage.getItem('cart')) || [];
+cartCount.textContent = cart.length;
+
 productsGrid.addEventListener('click',(e)=>{
     const cartButton=e.target.closest('.cart-btn')
     if(!cartButton) return;
@@ -306,9 +308,18 @@ productsGrid.addEventListener('click',(e)=>{
         return product.id === productId;
     });
     cart.push(selectedProduct);
+    localStorage.setItem('cart',JSON.stringify(cart));
     cartCount.textContent = cart.length;
+    
     console.log(cart);
 
+
+});
+window.addEventListener('storage', () => {
+
+    cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cartCount.textContent = cart.length;
 
 });
 
@@ -326,4 +337,16 @@ hamburger.addEventListener('click',()=>{
     navEl.classList.toggle('active')
 })
 // end hamburger menu
+
+
+
+productsGrid.addEventListener('click', (e) => {
+    const productCard = e.target.closest('.product-card');
+
+    if (!productCard) return;
+
+    const productId = productCard.dataset.id;
+
+    window.location.href = `details.html?id=${productId}`;
+});
 
