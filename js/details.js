@@ -1,30 +1,16 @@
-// =========================================================
-// PRODUCT DETAILS
-// =========================================================
+'use strict'
 
 const mainImage = document.querySelector('.main-image');
 const smallImages = document.querySelectorAll('.small-image');
-
 const productTitle = document.querySelector('.product-title');
 const productRating = document.querySelector('.product-rating span');
 const productPrice = document.querySelector('.product-price');
 const productDescription = document.querySelector('.product-description');
-
 const colorOptions = document.querySelector('.color-options');
 const addToCartButton = document.querySelector('.add-to-cart');
-
-
-// Get product ID from URL
-
 const params = new URLSearchParams(window.location.search);
 const productId = Number(params.get('id'));
-
-
-// Product variable
 let product;
-
-
-// Fetch products
 
 fetch('./data/products.json')
     .then((res) => res.json())
@@ -36,18 +22,12 @@ fetch('./data/products.json')
 
         if (!product) return;
 
-
-        // Main image
-
         mainImage.innerHTML = `
             <img
                 src="${product.image}"
                 alt="${product.title}"
             >
         `;
-
-
-        // Small images
 
         smallImages.forEach((image) => {
 
@@ -59,9 +39,6 @@ fetch('./data/products.json')
             `;
 
         });
-
-
-        // Product information
 
         productTitle.textContent =
             product.title;
@@ -75,9 +52,6 @@ fetch('./data/products.json')
         productDescription.textContent =
             `A stylish ${product.category.toLowerCase()} piece designed for everyday wear.`;
 
-
-        // Color
-
         colorOptions.innerHTML = `
             <span
                 class="color-option"
@@ -85,9 +59,6 @@ fetch('./data/products.json')
                 title="${product.color}"
             ></span>
         `;
-
-
-        // Size
 
         const sizeOptions =
             document.querySelector('.size-options');
@@ -104,9 +75,6 @@ fetch('./data/products.json')
                 `;
             })
             .join('');
-
-
-        // Size selection
 
         const sizeButtons =
             document.querySelectorAll('.size-option');
@@ -129,11 +97,6 @@ fetch('./data/products.json')
     .catch((error) => {
         console.log(error);
     });
-
-
-// =========================================================
-// QUANTITY
-// =========================================================
 
 const countButtons =
     document.querySelectorAll('.count-control button');
@@ -166,38 +129,24 @@ countButtons.forEach((button) => {
 });
 
 
-// =========================================================
-// ADD TO CART
-// =========================================================
+// start add to cart
 
 addToCartButton.addEventListener('click', () => {
-
-    // Make sure product is loaded
 
     if (!product) {
         return;
     }
 
-
-    // Get selected size
-
     const selectedSize =
         document.querySelector('.size-option.active');
-
 
     if (!selectedSize) {
         alert('Please select a size.');
         return;
     }
 
-
-    // Get cart
-
     const cart =
         JSON.parse(localStorage.getItem('cart')) || [];
-
-
-    // Create product for cart
 
     const productInCart = {
         ...product,
@@ -205,13 +154,7 @@ addToCartButton.addEventListener('click', () => {
         selectedSize: selectedSize.textContent.trim()
     };
 
-
-    // Add product
-
     cart.push(productInCart);
-
-
-    // Save cart
 
     localStorage.setItem(
         'cart',
@@ -222,9 +165,7 @@ addToCartButton.addEventListener('click', () => {
 });
 
 
-// =========================================================
-// PRODUCT INFORMATION TABS
-// =========================================================
+// start product information tab
 
 const infoButtons =
     document.querySelectorAll('.info-buttons button');
@@ -237,26 +178,15 @@ infoButtons.forEach((button, index) => {
 
     button.addEventListener('click', () => {
 
-        // Remove active class from all buttons
-
         infoButtons.forEach((btn) => {
             btn.classList.remove('active');
         });
-
-
-        // Hide all panels
 
         infoPanels.forEach((panel) => {
             panel.classList.remove('active');
         });
 
-
-        // Activate clicked button
-
         button.classList.add('active');
-
-
-        // Show matching panel
 
         infoPanels[index].classList.add('active');
 
@@ -264,10 +194,7 @@ infoButtons.forEach((button, index) => {
 
 });
 
-
-// =========================================================
-// CART COUNT
-// =========================================================
+// start cart count
 
 function updateCartCount() {
 
@@ -278,10 +205,20 @@ function updateCartCount() {
     if (!cartCount) return;
 
     const totalQuantity = cart.reduce((total, item) => {
-        return total + item.quantity;
+        return total + (item.quantity || 1);
     }, 0);
 
     cartCount.textContent = totalQuantity;
 }
 
 updateCartCount();
+
+
+// start hamburger menu
+const hamburger=document.querySelector('.menu-toggle')
+const navEl=document.querySelector('nav ul')
+
+hamburger.addEventListener('click',()=>{
+    navEl.classList.toggle('active')
+})
+// end hamburger menu

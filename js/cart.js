@@ -1,43 +1,20 @@
 'use strict';
 
-
-// =========================================================
-// ELEMENTS
-// =========================================================
-
 const cartItems = document.querySelector('.cart-items');
 const cartItemsCount = document.querySelector('.cart-items-count');
 const cartCount = document.querySelector('.cart-count');
-
 const clearCart = document.querySelector('.clear-cart');
-
 const subtotal = document.querySelector('.subtotal');
 const shipping = document.querySelector('.shipping');
 const discount = document.querySelector('.discount');
 const total = document.querySelector('.total');
-
 const promoInput = document.querySelector('.promo-input');
 const promoButton = document.querySelector('.promo-code button');
 const cartActions = document.querySelector('.cart-actions');
 
 
-// =========================================================
-// CART DATA
-// =========================================================
-
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-
-// =========================================================
-// DISCOUNT
-// =========================================================
-
 let discountRate = 0;
-
-
-// =========================================================
-// SET DEFAULT QUANTITY
-// =========================================================
 
 cart = cart.map((product) => ({
 
@@ -53,27 +30,15 @@ localStorage.setItem(
     JSON.stringify(cart)
 );
 
-
-// =========================================================
 // RENDER CART
-// =========================================================
 
 function renderCart() {
-
-    // -----------------------------------------------------
-    // CART COUNT
-    // -----------------------------------------------------
 
     cartItemsCount.textContent =
         `${cart.length} Items`;
 
     cartCount.textContent =
         cart.length;
-
-
-    // -----------------------------------------------------
-    // REMOVE OLD PRODUCTS
-    // -----------------------------------------------------
 
     const oldCartItems =
         cartItems.querySelectorAll('.cart-item');
@@ -83,11 +48,6 @@ function renderCart() {
         item.remove();
 
     });
-
-
-    // -----------------------------------------------------
-    // SUBTOTAL
-    // -----------------------------------------------------
 
     let subtotalPrice = 0;
 
@@ -103,11 +63,6 @@ function renderCart() {
     subtotal.textContent =
         `$${subtotalPrice.toFixed(2)}`;
 
-
-    // -----------------------------------------------------
-    // SHIPPING
-    // -----------------------------------------------------
-
     let shippingPrice = 0;
 
     if (
@@ -116,19 +71,12 @@ function renderCart() {
     ) {
 
         shippingPrice = 5;
-
     }
-
 
     shipping.textContent =
         shippingPrice === 0
             ? 'Free'
             : `$${shippingPrice.toFixed(2)}`;
-
-
-    // -----------------------------------------------------
-    // DISCOUNT
-    // -----------------------------------------------------
 
     const discountPrice =
         subtotalPrice * discountRate;
@@ -143,13 +91,7 @@ function renderCart() {
 
         discount.textContent =
             '$0.00';
-
     }
-
-
-    // -----------------------------------------------------
-    // TOTAL
-    // -----------------------------------------------------
 
     const totalPrice =
         subtotalPrice +
@@ -159,11 +101,6 @@ function renderCart() {
 
     total.textContent =
         `$${totalPrice.toFixed(2)}`;
-
-
-    // -----------------------------------------------------
-    // RENDER PRODUCTS
-    // -----------------------------------------------------
 
     cart.forEach((product, index) => {
 
@@ -261,18 +198,7 @@ function renderCart() {
     });
 
 }
-
-
-// =========================================================
-// INITIAL RENDER
-// =========================================================
-
 renderCart();
-
-
-// =========================================================
-// QUANTITY + REMOVE
-// =========================================================
 
 cartItems.addEventListener(
     'click',
@@ -286,11 +212,6 @@ cartItems.addEventListener(
 
         const itemIndex =
             Number(cartItem.dataset.index);
-
-
-        // -------------------------------------------------
-        // REMOVE
-        // -------------------------------------------------
 
         const removeButton =
             e.target.closest('.remove-item');
@@ -309,17 +230,11 @@ cartItems.addEventListener(
                 JSON.stringify(cart)
             );
 
-
             renderCart();
 
             return;
 
         }
-
-
-        // -------------------------------------------------
-        // QUANTITY BUTTON
-        // -------------------------------------------------
 
         const button =
             e.target.closest(
@@ -329,11 +244,6 @@ cartItems.addEventListener(
 
         if (!button) return;
 
-
-        // -------------------------------------------------
-        // PLUS
-        // -------------------------------------------------
-
         if (
             button.textContent.trim() === '+'
         ) {
@@ -341,11 +251,6 @@ cartItems.addEventListener(
             cart[itemIndex].quantity += 1;
 
         }
-
-
-        // -------------------------------------------------
-        // MINUS
-        // -------------------------------------------------
 
         else if (
             button.textContent.trim() === '−'
@@ -361,30 +266,15 @@ cartItems.addEventListener(
 
         }
 
-
-        // -------------------------------------------------
-        // SAVE
-        // -------------------------------------------------
-
         localStorage.setItem(
             'cart',
             JSON.stringify(cart)
         );
 
-
-        // -------------------------------------------------
-        // RENDER AGAIN
-        // -------------------------------------------------
-
         renderCart();
 
     }
 );
-
-
-// =========================================================
-// CLEAR CART
-// =========================================================
 
 clearCart.addEventListener(
     'click',
@@ -396,22 +286,15 @@ clearCart.addEventListener(
 
         promoInput.value = '';
 
-
         localStorage.setItem(
             'cart',
             JSON.stringify(cart)
         );
 
-
         renderCart();
-
     }
 );
 
-
-// =========================================================
-// PROMO CODE
-// =========================================================
 
 promoButton.addEventListener(
     'click',
@@ -422,34 +305,17 @@ promoButton.addEventListener(
                 .trim()
                 .toUpperCase();
 
-
-        // -------------------------------------------------
-        // VALID CODE
-        // -------------------------------------------------
-
         if (code === 'VELORA10') {
 
             discountRate = 0.10;
 
         }
 
-
-        // -------------------------------------------------
-        // INVALID CODE
-        // -------------------------------------------------
-
         else {
 
             discountRate = 0;
 
         }
-
-
-        // -------------------------------------------------
-        // UPDATE CART
-        // -------------------------------------------------
-
         renderCart();
-
     }
 );

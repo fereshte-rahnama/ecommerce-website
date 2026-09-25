@@ -14,10 +14,8 @@ const searchInput=document.querySelector('.search-icon input');
 
 let allProducts = [];
 
-
-// =========================
 // Fetch Products
-// =========================
+
 
 fetch('./data/products.json')
     .then((res) => res.json())
@@ -28,9 +26,8 @@ fetch('./data/products.json')
     .catch((error) => console.log(error));
 
 
-// =========================
 // Render Products
-// =========================
+
 
 function renderProducts(products) {
 
@@ -83,10 +80,7 @@ function renderProducts(products) {
     });
 }
 
-
-// =========================
 // Filter Products
-// =========================
 
 function filterProducts() {
 
@@ -148,10 +142,7 @@ function filterProducts() {
         );
     });
 
-
-    // =========================
     // Sort
-    // =========================
 
     const sortValue = sortSelect.value;
 
@@ -196,9 +187,8 @@ if (sortValue === 'best-selling') {
 }
 
 
-// =========================
 // Category Filter
-// =========================
+
 
 categoryInputs.forEach((input) => {
 
@@ -210,10 +200,8 @@ categoryInputs.forEach((input) => {
 
 });
 
-
-// =========================
 // All Products
-// =========================
+
 allProductsLink.addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -238,9 +226,8 @@ allProductsLink.addEventListener('click', (e) => {
 });
 
 
-// =========================
 // Price Filter
-// =========================
+
 
 priceRange.addEventListener('input', () => {
 
@@ -252,9 +239,7 @@ priceRange.addEventListener('input', () => {
 });
 
 
-// =========================
 // Color Filter
-// =========================
 
 colorInputs.forEach((input) => {
 
@@ -266,10 +251,7 @@ colorInputs.forEach((input) => {
 
 });
 
-
-// =========================
 // Size Filter
-// =========================
 
 sizeButtons.forEach((button) => {
 
@@ -283,10 +265,7 @@ sizeButtons.forEach((button) => {
 
 });
 
-
-// =========================
 // Sort
-// =========================
 
 sortSelect.addEventListener('change', () => {
 
