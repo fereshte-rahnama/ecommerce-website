@@ -6,7 +6,7 @@ Velora is a front-end e-commerce project focused on responsive design, dynamic p
 
 ## 🌐 Live Demo
 
-[**View Velora Live →**]( https://fereshte-rahnama.github.io/ecommerce-website//)
+[**View Velora Live →**]( https://fereshte-rahnama.github.io/ecommerce-website/)
 
 ---
 
