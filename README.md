@@ -1,132 +1,116 @@
-# 🛍️ Velora — Fashion E-commerce Website
+# Velora E-commerce Website
 
-A modern and responsive fashion e-commerce website built with HTML, CSS, and JavaScript.
+A responsive **frontend e-commerce website** built as a practice project to develop modern web development skills using HTML, CSS, and JavaScript.
 
-Velora is a front-end e-commerce project focused on responsive design, dynamic product rendering, filtering, product details, and shopping cart functionality.
+The project focuses on building an interactive shopping experience with dynamic product rendering, product filtering, product details, search, sorting, and shopping cart functionality.
 
-## 🌐 Live Demo
+## Live Demo
 
-[**View Velora Live →**]( https://fereshte-rahnama.github.io/ecommerce-website/)
+[View Live Demo](https://fereshte-rahnama.github.io/ecommerce-website/)
 
----
+## Technologies Used
 
-## 📸 Screenshots
+* HTML5
+* CSS3
+* JavaScript
+* Flexbox
+* CSS Grid
+* Responsive Design
+* Media Queries
+* Fetch API
+* LocalStorage
+* Boxicons
+* Google Fonts
 
-### 🏠 Home
+## Features
 
-![Velora Home](./screenshots/home.png)
+### Product Catalog
 
-### 🛍️ Shop
+* Dynamic product rendering from JSON data
+* Product categories
+* Product cards
+* Product details page
+* Product images and information
+* Price and discount display
 
-![Velora Shop](./screenshots/shop.png)
+### Search & Filtering
 
-### 🔎 Product Details
+* Live product search
+* Category filtering
+* Price range filtering
+* Color filtering
+* Size filtering
+* Product sorting
 
-![Velora Product Details](./screenshots/details.png)
+### Shopping Cart
 
-### 🛒 Shopping Cart
+* Add products to cart
+* Increase and decrease product quantity
+* Remove individual products
+* Clear cart
+* Automatic cart total calculation
+* Order summary
+* Promo code functionality
+* Cart data persistence using LocalStorage
 
-![Velora Shopping Cart](./screenshots/cart.png)
+### Responsive Design
 
----
+* Responsive navigation
+* Mobile-friendly layout
+* Responsive product grids
+* Responsive shopping cart
+* Desktop, tablet, and mobile layouts
 
-## ✨ Features
-
-- 📱 Fully responsive design
-- 🏠 Modern home page
-- 🛍️ Dynamic shop page
-- 🔎 Live product search
-- 🗂️ Category filtering
-- 💰 Price range filtering
-- 🎨 Color filtering
-- 📏 Size filtering
-- ↕️ Product sorting
-- ⭐ Product ratings
-- 📦 Dynamic product rendering from JSON
-- 🔎 Product details page
-- 🛒 Add to cart functionality
-- ➕ Increase and decrease product quantity
-- 🗑️ Remove products from cart
-- 🧹 Clear shopping cart
-- 💳 Order summary
-- 🎟️ Promo code support
-- 💾 Cart persistence using LocalStorage
-- 📱 Responsive mobile navigation
-
----
-
-## 🛠️ Technologies
-
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- JSON
-- LocalStorage
-- Fetch API
-- Boxicons
-
----
-
-## 📄 Pages
-
-### 🏠 Home
-
-The home page includes:
-
-- Hero banner
-- Featured collections
-- Product categories
-- Featured products
-- Promotional sections
-- Store policies
-
-### 🛍️ Shop
-
-The shop page includes:
-
-- Dynamic product cards
-- Product search
-- Category filters
-- Price range filter
-- Color filter
-- Size filter
-- Product sorting
-- Add to cart functionality
-
-### 🔎 Product Details
-
-The product details page displays:
-
-- Product image
-- Product title
-- Rating
-- Price
-- Description
-- Product color
-- Available sizes
-- Quantity selector
-- Add to cart
-- Buy now interface
-
-### 🛒 Shopping Cart
-
-The shopping cart includes:
-
-- Added products
-- Quantity controls
-- Remove product
-- Clear cart
-- Subtotal calculation
-- Shipping calculation
-- Discount calculation
-- Promo code
-- Final total
-
----
-
-## 💾 Data & LocalStorage
-
-Product information is stored in:
+## Project Structure
 
 ```text
-data/products.json
+ecommerce-website/
+│
+├── index.html
+├── shop.html
+├── details.html
+├── cart.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── ...
+│   └── ...
+│
+├── data/
+│   └── ...
+│
+├── assets/
+│   └── images/
+│
+├── screenshots/
+│
+├── LICENSE
+└── README.md
+```
+
+## Project Purpose
+
+This project was created to practice:
+
+* Building a multi-page e-commerce website
+* Working with JavaScript and DOM manipulation
+* Rendering dynamic content from data
+* Using Fetch API
+* Implementing search, filtering, and sorting
+* Managing shopping cart state
+* Working with LocalStorage
+* Creating responsive layouts
+* Organizing frontend project files
+* Improving UI structure and user experience
+
+## Screenshots
+
+Screenshots of the website are available in the `screenshots` directory.
+
+## Note
+
+This is a **frontend practice project** created for learning and portfolio development purposes.
+
+The products, prices, promotional codes, store information, and other content displayed on the website are sample/demo data and do not represent a real commercial store.
